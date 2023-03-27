@@ -1,0 +1,233 @@
+@import url(mobile.css);
+
+/* ==================== RESET CSS ==================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+/* ==================== VARIABLES ==================== */
+
+:root {
+    --fs-11: 1.1rem;
+    --fs-14: 1.4rem;
+    --fs-20: 2rem;
+    --fs-32: 3.2rem;
+
+    --text-color-default: #fff;
+    --text-color-gray: #403937;
+    --text-color-gray-300: #7C7C8A;
+    --text-color-gray-400: #756966;
+    --text-color-purple: #7C3AED;
+    --text-color-purple-500: #CAB3FF;
+    --text-color-purple-600: #E2D6FF;
+
+    --bg-color-primary: #fff;
+    --bg-color-secondary: #7C3AED;
+}
+
+/* ==================== GENERIC STYLES ==================== */
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+a,
+a:active {
+    text-decoration: none;
+    color: #000;
+}
+
+ul li {
+    list-style: none;
+}
+
+.card > p {
+    padding-block: 1.1rem;
+}
+
+/* ==================== UTILITY CLASSES ==================== */
+
+.card {
+    box-shadow: 0rem 0rem 1.1rem #40393733;
+    border-radius: .8rem;
+    padding: 2.4rem;
+    margin-block: 2.4rem;
+}
+
+/* ==================== CSS CONTENT ==================== */
+
+#content {
+    width: 100%;
+    min-height: 200vh;
+    background-color: var(--bg-color-secondary);
+    display: flex;
+    justify-content: space-between;
+}
+
+.header {
+    padding: 4rem 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    position: fixed;
+}
+
+.header__navigation .header__items {
+    display: flex;
+    flex-direction: column;
+    gap: 3.6rem;
+}
+
+.header__items .header__links {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+}
+
+.header__items .header__links {
+    color: var(--text-color-purple-500);
+    transition: .4s ease;
+    font-weight: 500;
+}
+
+.header__items .header__links.active {
+    color: #fff;
+}
+
+.header__items .header__links:hover:not(.active) {
+    color: #fff;
+}
+
+.header__items .header__lists:first-child {
+    font-weight: 700;
+}
+
+/* ==================== CSS mainKanban ==================== */
+
+.mainKanban {
+    width: 130.5rem;
+    height: auto;
+    background-color: var(--bg-color-primary);
+    border-radius: 3.2rem 0 0 0;
+    margin-top: .4rem;
+    padding: 4.8rem 3.2rem;
+}
+
+.mainKanban > * {
+    width: 120rem;
+    margin: auto;
+    padding: 2rem;
+}
+
+.mainKanban__profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2.4rem;
+}
+
+.mainKanban__text {
+    color: var(--text-color-gray);
+    font-weight: 700;
+    font-size: var(--fs-32);
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.mainKanban__profile .avatar img {
+    display: block;
+}
+
+.mainKanban__filterAndSearch {
+    padding-block: 3.2rem;
+    display: flex;
+    gap: 1.6rem;
+}
+
+.mainKanban__filter {
+    background-color: var(--bg-color-secondary);
+    border-radius: .5rem;
+    padding: 1.2rem 3.2rem;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    color: var(--text-color-default);
+    font-weight: 400;
+    font-size: var(--fs-14);
+}
+
+.mainKanban__search {
+    position: relative;
+    width: 100%;
+}
+
+.mainKanban__search input {
+    height: 4.8rem;
+    width: 100%;
+    padding: 0 0 0 5.5rem;
+    border: none;
+    box-shadow: 0rem 0rem 1.1rem #40393733;
+    border-radius: .8rem;
+    outline: none;
+    color: var(--text-color-gray-300);
+}
+
+.mainKanban__search input::placeholder {
+    color: var(--text-color-gray-300);
+}
+
+.mainKanban__search img {
+    position: absolute;
+    top: 29%;
+    left: 2%;
+}
+
+
+/* ==================== CSS mainKanban ==================== */
+
+.mainKanban__toDoLists {
+    display: grid;
+    grid-template-columns: repeat(3, 36.8rem);
+    gap: 4.8rem;
+}
+
+.mainKanban__toDoLists h3,
+strong {
+    color: var(--text-color-gray);
+}
+
+.mainKanban__toDoLists p {
+    color: var(--text-color-gray-400);
+}
+
+.mainKanban__toDoLists span + span {
+    margin-left: .8rem;
+}
+
+.mainKanban__toDoLists span {
+    color: var(--text-color-purple);
+    background-color: var(--text-color-purple-600);
+    padding: .4rem .8rem;
+    border-radius: 3rem;
+}
+
+
+/* ==================== DRAG AND DROP JS ==================== */
+
+.dragging {
+    cursor: move;
+    opacity: 0.3;
+}
