@@ -1,5 +1,3 @@
-@import url(mobile.css);
-
 /* ==================== RESET CSS ==================== */
 
 * {
@@ -73,6 +71,7 @@ ul li {
     background-color: var(--bg-color-secondary);
     display: flex;
     justify-content: space-between;
+    padding-left: 15%;
 }
 
 .header {
@@ -81,6 +80,8 @@ ul li {
     flex-direction: column;
     gap: 6rem;
     position: fixed;
+    top: 0;
+    left: 0;
 }
 
 .header__navigation .header__items {
@@ -116,7 +117,7 @@ ul li {
 /* ==================== CSS mainKanban ==================== */
 
 .mainKanban {
-    width: 130.5rem;
+    width: 100%;
     height: auto;
     background-color: var(--bg-color-primary);
     border-radius: 3.2rem 0 0 0;
